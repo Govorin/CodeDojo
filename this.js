@@ -25,8 +25,11 @@ function list() {
 console.log(list.call(null, 1,2,3,4,5));
 console.log(list.apply(null, [1,2,3,4,5]));
 
-function print() {
-  console.log(this)
-}
-print.call(null);
-print.apply(null);
+let timer = {
+  count:0,
+  tick:function () {
+    this.count+=1;
+    console.log(this.count);
+  }
+};
+setInterval(timer.tick.bind(timer), 1000);
