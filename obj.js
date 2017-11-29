@@ -70,3 +70,60 @@ console.log(map.keys());
 console.log(map.values());
 console.log(map.entries());
 
+//set
+let set={
+  store:{},
+  has(values){
+    return values in this.store;
+  },
+  get(value){
+    if(!this.has(value)){
+      this.store[value]=value;
+      return true;
+    }
+    return false;
+  },
+  delete(value){
+    if (this.has(value)){
+      delete this.store[value];
+      return true;
+    }
+    return false;
+  },
+  clear(){
+    this.store={};
+  },
+  size(){
+    let size=0;
+    for(let key in this.store){
+      size++;
+    }
+    return size;
+  },
+  entries(){
+    let entries=[];
+    for (let key in this.store){
+      entries.push({key,
+        value:this.store[key]});
+    }
+    return entries;
+  },
+  forEach(callback){
+    for (let key in this.store){
+      let value=this.store[key];
+      callback(value,key,this);
+    }
+  }
+};
+console.log(set.has('hello'));
+console.log(set.get('1'));
+console.log(set.get('2'));
+console.log(set.get('3'));
+console.log(set.get('4'));
+console.log(set.has('5'));
+console.log(set);
+console.log(set.delete('2'));
+console.log(set.has('1'));
+console.log(set.size());
+console.log(set);
+console.log(set.entries());
