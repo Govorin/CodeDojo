@@ -127,3 +127,4 @@ console.log(set.has('1'));
 console.log(set.size());
 console.log(set);
 console.log(set.entries());
+module.export=map;
