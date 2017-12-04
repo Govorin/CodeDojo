@@ -91,6 +91,7 @@ contacts.set('Douglas Crockford','Duglas@crofdord.io')
 	.set('Kyle Simpson', 'getify@gmail.com');
 console.log(dictionary.clear===contacts.clear);
 console.log(dictionary.entries);
+
 console.log(contacts.entries);
 console.log(createMap.prototype.clear===dictionary.clear);
 console.log(createMap.prototype.clear===contacts.clear);
